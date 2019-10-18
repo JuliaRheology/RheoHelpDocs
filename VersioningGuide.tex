@@ -29,8 +29,8 @@ The above components are used for RHEOS versioning in the following way. A numbe
 \newpage
 So a high level overview is the following:
 \begin{itemize}
-	\item Make changes on master branch
-	\item When a version is ready to be finalised, update Project.toml, testing matrix and commit
+	\item Make changes on master branch, add tests as necessary and make sure all tests are passing in required Julia versions
+	\item When a version is ready to be finalised, update Project.toml, then commit
 	\item Invoke Registrator.jl which pushes necessary information to the central package repository
 	\item TagBot will then automatically create a release on the RHEOS repository
 \end{itemize}
