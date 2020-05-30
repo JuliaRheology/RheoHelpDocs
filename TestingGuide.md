@@ -1,24 +1,24 @@
----
-abstract: |
-    This document is a short guide into how the RHEOS testing procedure
+RHEOS Testing - A Brief Overview
+================================
+
+
+This document is a short guide into how the RHEOS testing procedure
     works. Many aspects of it also apply to the testing procedures of other
     Julia packages -- the process is fairly standardised. The test creation
     and running process can be summarised by the following. Tests are
     written in the file 'RHEOS/test/runtests.jl'. They consist of code
-    blocks that return [`true`]{style="background-color: light-light-gray"}
-    or [`false`]{style="background-color: light-light-gray"} depending on
+    blocks that return `true`
+    or `false` depending on
     whether or not the test has passed, and these code blocks are prefaced
-    by the [`@test`]{style="background-color: light-light-gray"} macro. For
+    by the `@test` macro. For
     readability, tests longer than one line of code should be encapsulated
     in functions. For organisational benefit, the tests are generally split
     off into one test file per source file, with the test files being
     included from the main 'runtests.jl' script. The tests can then be run
     locally, and will automatically run remotely after running
-    [`git push`]{style="background-color: light-light-gray"}.
-title: 'RHEOS Testing - A Brief Overview'
----
+    `git push`.
 
-\maketitle
+
 Local Testing
 =============
 
@@ -31,8 +31,8 @@ additional file called 'runtests.jl'. Having one test file per source
 file is purely for organisational purposes. The only file (and filename)
 of special significance is the 'runtests.jl' file. This is the Julia
 file that will be run when we type
-[`test RHEOS`]{style="background-color: light-light-gray"} in the Julia
-REPL's [`pkg`]{style="background-color: light-light-gray"} mode. It is
+`test RHEOS` in the Julia
+REPL's `pkg` mode. It is
 therefore also the file that will be run remotely by Travis CI and
 Appveyor when they run the tests on their Linux and Windows servers
 respectively.
@@ -43,11 +43,11 @@ Ideally, each function in the source code should have at least one test.
 For a clear organisation, any test that requires more than one simple
 line of code should be written as a function. The line of code /
 function test should return a boolean value of
-[`true`]{style="background-color: light-light-gray"} or
-[`false`]{style="background-color: light-light-gray"} depending on
+`true` or
+`false` depending on
 whether the test passed or not. Then the line of code / function call
 should be prefaced with an
-[`@test`]{style="background-color: light-light-gray"} macro. Let's take
+`@test` macro. Let's take
 a look at an example:
 
     function _derivCD(tol)
@@ -68,10 +68,10 @@ defined as a global constant earlier in the source file.)
 ### Running Tests Locally
 
 To run tests locally you can either go into
-[`pkg`]{style="background-color: light-light-gray"} mode and type
-[`test RHEOS`]{style="background-color: light-light-gray"}, or you can
+`pkg` mode and type
+`test RHEOS`, or you can
 navigate into the 'RHEOS/tests' directory, open up a Julia REPL and type
-[`include("runtests.jl")`]{style="background-color: light-light-gray"}.
+`include("runtests.jl")`.
 
 If a test fails, an error will be generated.
 
