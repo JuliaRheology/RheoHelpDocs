@@ -1,12 +1,11 @@
----
-abstract: |
-    This document is a short explanation of how the RHEOS versioning
+RHEOS Versioning - A Brief Overview
+===================================
+
+This document is a short explanation of how the RHEOS versioning
     procedure works, and how it relates to documentation, CI testing and the
     RHEOS central package repository.
-title: 'RHEOS Versioning - A Brief Overview'
----
 
-\maketitle
+
 Basic Versioning Procedure
 ==========================
 
@@ -26,7 +25,7 @@ some point it will make sense to release a new version. When this moment
 arrives, a final commit should be made that contains an updated
 Project.toml file. The information added to the Project.toml commit is
 the version number (for example
-[`version = "0.9.2"`]{style="background-color: light-light-gray"} at
+`version = "0.9.2"` at
 time of writing) and any compatibility information (e.g. the version(s)
 of Julia that the package is compatible with and any specific version
 numbers required of dependencies). For information on exactly how this
@@ -34,13 +33,12 @@ information should be formatted in the Project.toml file, see [this
 link](https://julialang.github.io/Pkg.jl/v1/compatibility/index.html).
 **IMPORTANT NOTE: The Julia versions which the package is specified to
 be compatible with should be in the CI testing matrix on Linux and
-Windows and should be passing, see
-section [2](#sec:TC){reference-type="ref" reference="sec:TC"} for more
+Windows and should be passing, see below for more
 info**. After this commit is pushed, you need to navigate to that commit
 in GitHub by going to the main RHEOS page, clicking commits, and then on
 the relevant commit. You can then invoke the JuliaRegistrator bot by
 creating a comment saying
-[`@JuliaRegistrator register()`]{style="background-color: light-light-gray"},
+`@JuliaRegistrator register()`,
 as for example [this
 link](https://github.com/JuliaRheology/RHEOS.jl/commit/e2e63c299615a32ab2d7e055484b3efc662544c4).
 This will create a pull request on the Julia central package repositry.
@@ -77,7 +75,7 @@ Agreement should be sought with main commiters before a version is
 finalised. For now, we should try and follow Semantic Versioning 2.0.0,
 a description of which can be found at <https://semver.org/>.
 
-Testing Considerations {#sec:TC}
+Testing Considerations
 ======================
 
 As described in the testing documentation, the RHEOS github repository
