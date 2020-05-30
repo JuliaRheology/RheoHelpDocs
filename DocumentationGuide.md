@@ -1,6 +1,7 @@
----
-abstract: |
-    This document is a short overview of how the RHEOS documentation system
+A Whirlwind Tour of RHEOS Documentation
+=======================================
+
+This document is a short overview of how the RHEOS documentation system
     works. Many aspects of it also apply to the documentation systems of
     other Julia packages -- the process is fairly standardised. The process
     can be summarised by the following. The documentation structure is
@@ -8,12 +9,9 @@ abstract: |
     discussed below. This will then create links to the various markdown
     files in the 'RHEOS/docs/src' directory. The documentation can then be
     built locally by the user, and is built automatically on
-    [`git push`]{style="background-color: light-gray"} by the Travis CI
+    `git push` by the Travis CI
     service.
-title: A Whirlwind Tour of RHEOS Documentation
----
 
-\maketitle
 Local Documentation
 ===================
 
@@ -36,11 +34,11 @@ documentation.
 ### Documenter.jl Generated Files
 
 When you run 'make.jl' by typing
-[`julia make.jl`]{style="background-color: light-gray"} into a terminal,
+`julia make.jl` into a terminal,
 the documentation will be built locally. (*Note that you would have to
 be in the 'RHEOS/docs' directory and you may have to
-[`add Documenter`]{style="background-color: light-gray"} in
-[`pkg`]{style="background-color: light-gray"} mode before you run
+`add Documenter` in
+`pkg` mode before you run
 'make.jl' if you do not have the documenter package installed*.)\
 Running the script will build the html documentation into the
 'RHEOS/docs/build' directory. Try building the docs. Go into the 'build'
@@ -79,7 +77,7 @@ are briefly described below.\
 For the RHEOS functions which have help docstrings above them, these can
 be conveniently imported into the documentation in an aesthetically
 pleasing way. This is achieved by the
-[`@docs`]{style="background-color: light-gray"} macro. More
+`@docs` macro. More
 specifically, see this excerpt from the 'API.md' documentation source
 file:
 
@@ -91,17 +89,17 @@ file:
     ```
 
 The resultant html file produced, assuming each of the
-[`resample`]{style="background-color: light-gray"},
-[`cutting`]{style="background-color: light-gray"},
-[`smooth`]{style="background-color: light-gray"} and
-[`extract`]{style="background-color: light-gray"} functions have
+`resample`,
+`cutting`,
+`smooth` and
+`extract` functions have
 docstrings, will be each function's argument signature, followed by its
 docstring.\
 Functions documented using the above mentioned
-[`@docs`]{style="background-color: light-gray"} macro will automatically
+`@docs` macro will automatically
 have a reference assigned to them, as will sections (and sub-headings if
 desired). This means that easily be linked to through use of the
-[`@ref`]{style="background-color: light-gray"} macro. For example, from
+`@ref` macro. For example, from
 the 'index.md' markdown file:
 
     The [API](@ref) section is a comprehensive list of RHEOS types and 
@@ -109,7 +107,7 @@ the 'index.md' markdown file:
 
 The word 'API' would then be built as an html link to the 'API' section
 of the docs in the resultant html. For more info on the
-[`@ref`]{style="background-color: light-gray"} macro, including how to
+`@ref` macro, including how to
 handle reference conflicts and other more complex cases, see the
 Documenter.jl documentation.
 
@@ -120,18 +118,18 @@ So we have all our individual documentation files in the
 to structure our documentation so that all our pages are accessible from
 the side-bar. This is where 'make.jl' comes in.\
 There are two important parts of the 'make.jl' file. The call to the
-[`makedocs`]{style="background-color: light-gray"} function and the call
-to the [`deploydocs`]{style="background-color: light-gray"} function.
+`makedocs` function and the call
+to the `deploydocs` function.
 The first function does the building of the documentation, the second
 function deploys it to the gh-pages branch on the github repository. For
 building locally, you don't actually need the call to the
-[`deploydocs`]{style="background-color: light-gray"} function but it
+`deploydocs` function but it
 doesn't do any harm if it runs. The
-[`deploydocs`]{style="background-color: light-gray"} function is
+`deploydocs` function is
 relevant to the 'Remote Documentation' section below. This section is
-concerned with the [`makedocs`]{style="background-color: light-gray"}
+concerned with the `makedocs`
 function. In particular, the
-[`pages`]{style="background-color: light-gray"} keyword argument. Let's
+`pages` keyword argument. Let's
 take a look at the code:
 
     pages = [
