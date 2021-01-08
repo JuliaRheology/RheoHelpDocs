@@ -34,9 +34,6 @@ A last important point on the `RHEOS/docs/build` directory. It is listed in the 
 ### *Modifying the Documentation*
 
 The documentation of `Documenter.jl` and `Literate.jl` are the best resources for understanding how to modify the Julia and markdown files to meet your requirements. Both packages' docs are well written. However, a few specific aspects are dicussed below for convenience.
-<br><br>
-
-### *Special Documenter.jl Markdown Features*
 
 The documentation pages in `RHEOS/docs/src` that do not need to be interactive are written in markdown. Two nice features which are specific to the Documenter.jl parser, and used in the RHEOS documentation, are shown below.
 
