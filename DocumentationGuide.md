@@ -1,4 +1,4 @@
-# **A** Whirlwind Tour of RHEOS Documentation
+# **A Whirlwind Tour of RHEOS Documentation**
 
 This document is a short overview of how the RHEOS documentation system works.
 
