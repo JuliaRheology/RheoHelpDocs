@@ -7,9 +7,6 @@ A high level overview of the documentation is as follows. The documentation sour
 
 # Local Documentation
 
-## Directory Structure
-<br>
-
 ### *User Modified Files*
 
 Almost all the documentation related files are in the `RHEOS/docs` directory. The file within this directory that determines the documentation build and deployment process is in this directory and is called `make.jl`. It contains all the various documentation build parameters as well as the page structure of the documentation - discussed further below. There are two conceptual parts of `make.jl`: the first makes use of `Literate.jl` to build all the Jupyter notebooks and markdown files from the Julia source documentation files and put them in `RHEOS/docs/staging-docs`; the second uses `Documenter.jl` to convert the markdown files into HTML, and then deploys these if building remotely, if building locally deployment is skipped.
