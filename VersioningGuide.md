@@ -1,10 +1,10 @@
-RHEOS Versioning - A Brief Overview
-===================================
+# **RHEOS Versioning - A Brief Overview**
 
-This document is a short explanation of how the RHEOS versioning procedure works, and how it relates to documentation, CI testing and the RHEOS central package repository.
+This document is a short explanation of how the RHEOS versioning procedure works, and how it relates to documentation, CI testing and the RHEOS central package repository. 
+<br><br>
 
-Basic Versioning Procedure
-==========================
+# Basic Versioning Procedure
+
 
 Tools and their Use
 -------------------
