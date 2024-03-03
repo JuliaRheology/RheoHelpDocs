@@ -58,3 +58,8 @@ The word `API` would then be built as an HTML link to the `API` section of the d
 As mentioned above, the actual on-line documentation is built remotely. This section is brief overview of how that process works. 
 
 The best thing to do to understand this process is to try and familiarise yourself with the GitHub action file found in `RHEOS/.github/.workflows/Docbuild.yml`. When a commit or tag is pushed, or a pull request is merged, GitHub triggers the action defined in `DocBuild.yml`. The key part of this action is to run `make.jl` and deploy the documentation to the `gh-pages` branch of the repository.
+
+In order to copy the documentation auto-generated on the relevant branch of the repository, keys need to be set on GitHub.
+- Use the DocumenterTools.genkeys() function (part of the DocumenterTools.jl package) to generate a public key and the corresponding Base64-encoded private key.
+- Create a new GitHub Secret on this repository where the name is DOCUMENTER_KEY and the contents are the Base64-encoded private key.
+- Add the public key as a deploy key on this repository. Make sure that the deploy key has write access.
